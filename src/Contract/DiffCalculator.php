@@ -1,8 +1,7 @@
 <?php
 
-namespace Contract;
+namespace DiffCalculator\Contract;
 
-require_once 'DiffResult.php';
 
 interface DiffCalculator
 {

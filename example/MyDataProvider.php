@@ -1,8 +1,7 @@
 <?php
 
-require_once '../Contract/DiffDataProvider.php';
 
-class MyDataProvider implements \Contract\DiffDataProvider
+class MyDataProvider implements \DiffCalculator\Contract\DiffDataProvider
 {
     /**
      * @var array

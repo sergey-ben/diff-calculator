@@ -1,6 +1,6 @@
 <?php
 
-namespace Contract;
+namespace DiffCalculator\Contract;
 
 
 interface DiffCallbacks

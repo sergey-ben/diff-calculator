@@ -1,8 +1,7 @@
 <?php
 
-namespace Contract;
+namespace DiffCalculator\Contract;
 
-require_once 'DiffCallbacks.php';
 
 interface DiffResult
 {

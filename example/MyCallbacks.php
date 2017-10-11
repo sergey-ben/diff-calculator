@@ -1,8 +1,7 @@
 <?php
 
-require_once '../Contract/DiffCallbacks.php';
 
-class MyCallbacks implements \Contract\DiffCallbacks
+class MyCallbacks implements \DiffCalculator\Contract\DiffCallbacks
 {
 
     public function onInserted($item)

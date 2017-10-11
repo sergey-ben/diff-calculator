@@ -1,9 +1,12 @@
 <?php
 
-require_once '../DiffCalculator.php';
-require_once 'MyCallbacks.php';
-require_once 'MyDataProvider.php';
+use DiffCalculator\DiffCalculator;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
 require_once 'SomeEntity.php';
+require_once 'MyDataProvider.php';
+require_once 'MyCallbacks.php';
 
 $old = [
     new SomeEntity(0, 'dfg'),

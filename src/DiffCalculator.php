@@ -1,12 +1,12 @@
 <?php
 
-require_once 'Contract/DiffCalculator.php';
-require_once 'DiffResult.php';
+namespace DiffCalculator;
 
-class DiffCalculator implements \Contract\DiffCalculator
+
+class DiffCalculator implements Contract\DiffCalculator
 {
 
-    public function calculate(\Contract\DiffDataProvider $data): \Contract\DiffResult
+    public function calculate(Contract\DiffDataProvider $data): Contract\DiffResult
     {
         $result = new DiffResult();
 

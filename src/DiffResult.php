@@ -1,8 +1,9 @@
 <?php
 
-require_once 'Contract/DiffResult.php';
+namespace DiffCalculator;
 
-class DiffResult implements \Contract\DiffResult
+
+class DiffResult implements Contract\DiffResult
 {
     private $changed = [];
 
@@ -10,7 +11,7 @@ class DiffResult implements \Contract\DiffResult
 
     private $deleted = [];
 
-    public function dispatch(\Contract\DiffCallbacks $callbacks)
+    public function dispatch(Contract\DiffCallbacks $callbacks)
     {
         foreach ($this->changed as $item) {
             $callbacks->onChanged($item);
