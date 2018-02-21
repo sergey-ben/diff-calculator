@@ -1,6 +1,6 @@
 <?php
 
-class SomeEntity
+class MyEntity
 {
     private $id;
 
@@ -20,5 +20,12 @@ class SomeEntity
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function equals(MyEntity $entity): bool
+    {
+        return
+            $this->getId() === $entity->getId() &&
+            $this->getName() === $entity->getName();
     }
 }

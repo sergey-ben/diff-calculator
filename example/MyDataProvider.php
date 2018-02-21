@@ -4,12 +4,12 @@
 class MyDataProvider implements \DiffCalculator\Contract\DataProvider
 {
     /**
-     * @var array
+     * @var MyEntity[]
      */
     private $old;
 
     /**
-     * @var array
+     * @var MyEntity[]
      */
     private $new;
 
@@ -19,80 +19,56 @@ class MyDataProvider implements \DiffCalculator\Contract\DataProvider
         $this->new = $new;
     }
 
+    /**
+     * @return int
+     */
     public function getOldSize(): int
     {
         return count($this->old);
     }
 
+    /**
+     * @return int
+     */
     public function getNewSize(): int
     {
         return count($this->new);
     }
 
-    public function getOldItemKey(int $index)
-    {
-        return $this->old[$index]->getId();
-    }
-
-    public function getNewItemKey(int $index)
-    {
-        return $this->new[$index]->getId();
-    }
-
+    /**
+     * @param int $index
+     * @return MyEntity
+     */
     public function getOldItem(int $index)
     {
         return $this->old[$index];
     }
 
+    /**
+     * @param int $index
+     * @return MyEntity
+     */
     public function getNewItem(int $index)
     {
         return $this->new[$index];
     }
 
-    public function getOldItemWithKey($key)
-    {
-        return $this->findByKey($this->old, $key);
-    }
-
-    public function getNewItemWithKey($key)
-    {
-        return $this->findByKey($this->new, $key);
-    }
-
-    public function hasOldItem(int $index): bool
-    {
-        return isset($this->old[$index]);
-    }
-
-    public function hasNewItem(int $index): bool
-    {
-        return isset($this->new[$index]);
-    }
-
-    public function hasOldItemWithKey($key): bool
-    {
-        return null !== $this->getOldItemWithKey($key);
-    }
-
-    public function hasNewItemWithKey($key): bool
-    {
-        return null !== $this->getNewItemWithKey($key);
-    }
-
+    /**
+     * @param MyEntity $itemA
+     * @param MyEntity $itemB
+     * @return bool
+     */
     public function identical($itemA, $itemB): bool
     {
-        return
-            $itemA->getId() === $itemB->getId() &&
-            $itemA->getName() === $itemB->getName();
+        return $itemA->equals($itemB);
     }
 
-    private function findByKey(array $data, $key) {
-        $result = array_filter($data, function($item) use ($key) {
-            return $item->getId() === $key;
-        });
-
-        return empty($result)
-            ? null
-            : reset($result);
+    /**
+     * @param MyEntity $item
+     * @return int
+     */
+    public function getKeyOfItem($item)
+    {
+        return $item->getId();
     }
 }
