@@ -1,2 +1,5 @@
+composer.lock
 vendor
 .idea
+coverage
+tests/coverage.txt

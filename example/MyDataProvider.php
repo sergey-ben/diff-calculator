@@ -1,7 +1,7 @@
 <?php
 
 
-class MyDataProvider implements \DiffCalculator\Contract\DiffDataProvider
+class MyDataProvider implements \DiffCalculator\Contract\DataProvider
 {
     /**
      * @var array

@@ -3,12 +3,13 @@
 namespace DiffCalculator;
 
 
-class DiffCalculator implements Contract\DiffCalculator
+class Calculator implements Contract\Calculator
 {
 
-    public function calculate(Contract\DiffDataProvider $data): Contract\DiffResult
+    public function calculate(Contract\DataProvider $dataProvider): Contract\Result
     {
-        $result = new DiffResult();
+        $result = new Result();
+        $data = new DataProviderWrapper($dataProvider);
 
         $oldSize = $data->getOldSize();
         $newSize = $data->getNewSize();

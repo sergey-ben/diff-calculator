@@ -3,7 +3,7 @@
 namespace DiffCalculator\Contract;
 
 
-interface DiffCallbacks
+interface ResultCallbacks
 {
     public function onInserted($item);
 

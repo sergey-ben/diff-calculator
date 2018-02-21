@@ -1,6 +1,6 @@
 <?php
 
-use DiffCalculator\DiffCalculator;
+use DiffCalculator\Calculator;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -24,7 +24,7 @@ $new = [
     new SomeEntity(null, 'added five'),
 ];
 
-$calculator = new DiffCalculator();
+$calculator = new Calculator();
 $result = $calculator->calculate(new MyDataProvider($old, $new));
 
 $result->dispatch(new MyCallbacks());
