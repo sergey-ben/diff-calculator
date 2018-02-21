@@ -1,0 +1,26 @@
+language: php
+
+env:
+  global:
+    - setup=stable
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.0
+    - php: 7.1
+    - php: 7.2
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_install:
+  - composer self-update
+
+install:
+  - composer update
+
+script: composer test
