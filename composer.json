@@ -3,7 +3,7 @@
   "type": "library",
   "license": "proprietary",
   "stability": "stable",
-  "description": "Small library for calculating difference between two collections or data structures."
+  "description": "Small library for calculating difference between two collections or data structures.",
   "authors": [
     {
       "name": "Sergey B.",
